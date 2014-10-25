@@ -20,7 +20,7 @@ sed -i "/^# deb .*partner/ s/^# //; /multiverse/d" /etc/apt/sources.list
 echo "deb http://ru.archive.ubuntu.com/ubuntu/ trusty multiverse" >> /etc/apt/sources.list
 echo "deb http://ru.archive.ubuntu.com/ubuntu/ trusty-updates multiverse" >> /etc/apt/sources.list
 
-curl -sSL https://get.docker.io/ubuntu/ | sh
+curl -sSL https://get.docker.io/ubuntu/ | sudo sh
 
 apt-get install percona-server-server-5.6 percona-server-client-5.6 \
 postgresql-9.4 \
