@@ -13,9 +13,12 @@ echo deb http://repo.percona.com/apt trusty  main | sudo tee  /etc/apt/sources.l
 curl -sSL  http://nginx.org/keys/nginx_signing.key | sudo apt-key add  -
 echo deb http://nginx.org/packages/ubuntu/ trusty nginx | sudo tee /etc/apt/sources.list.d/nginx.list
 
+wget -qP /tmp/ http://repo.zabbix.com/zabbix/2.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_2.4-1+trusty_all.deb && dpkg -i /tmp/zabbix-release_2.4-1+trusty_all.deb && rm -rf /tmp/zabbix-release_2.4-1+trusty_all.deb
+
 apt-get update
 apt-get install percona-server-server-5.6 percona-server-client-5.6 \
 postgresql-9.4 \
-nginx
+nginx \
+zabbix-agent
 
 
