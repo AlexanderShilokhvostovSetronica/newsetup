@@ -20,12 +20,19 @@ sed -i "/^# deb .*partner/ s/^# //; /multiverse/d" /etc/apt/sources.list
 echo "deb http://ru.archive.ubuntu.com/ubuntu/ trusty multiverse" >> /etc/apt/sources.list
 echo "deb http://ru.archive.ubuntu.com/ubuntu/ trusty-updates multiverse" >> /etc/apt/sources.list
 
-curl -sSL https://get.docker.io/ubuntu/ | sudo sh
+sudo apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+echo deb https://apt.dockerproject.org/repo ubuntu-trusty main | sudo tee /etc/apt/sources.list.d/docker.list
+
+echo deb mirror://mirrors.ubuntu.com/mirrors.txt trusty main restricted universe multiverse | sudo tee /etc/apt/sources.list.d/mirror.list
+echo deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-updates main restricted universe multiverse | sudo tee -a /etc/apt/sources.list.d/mirror.list
+echo deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-backports main restricted universe multiverse | sudo tee -a /etc/apt/sources.list.d/mirror.list
+echo deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-security main restricted universe multiverse | sudo tee -a /etc/apt/sources.list.d/mirror.list
 
 apt-get install percona-server-server-5.6 percona-server-client-5.6 \
 postgresql-9.4 \
 nginx \
 zabbix-agent \
+docker-engine \
 ssh vim mc iptraf bash-completion tcpdump mtr-tiny screen tmux rar unrar zip unzip lsof whois rlwrap dstat sudo xz-utils git mercurial etckeeper bridge-utils haveged strace ntp xfsprogs
 
 
