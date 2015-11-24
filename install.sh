@@ -9,10 +9,7 @@ echo deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main 9.4 | sudo te
 sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
 echo deb http://repo.percona.com/apt trusty  main | sudo tee  /etc/apt/sources.list.d/percona.list
 
-
-
-curl -sSL  http://nginx.org/keys/nginx_signing.key | sudo apt-key add  -
-echo deb http://nginx.org/packages/ubuntu/ trusty nginx | sudo tee /etc/apt/sources.list.d/nginx.list
+sudo add-apt-repository ppa:nginx/stable
 
 wget -qP /tmp/ http://repo.zabbix.com/zabbix/2.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_2.4-1+trusty_all.deb && dpkg -i /tmp/zabbix-release_2.4-1+trusty_all.deb && rm -rf /tmp/zabbix-release_2.4-1+trusty_all.deb
 
