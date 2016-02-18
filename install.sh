@@ -33,4 +33,9 @@ docker-engine \
 ssh vim mc iptraf bash-completion tcpdump mtr-tiny screen tmux rar unrar zip unzip lsof whois rlwrap dstat sudo xz-utils git mercurial etckeeper bridge-utils haveged strace ntp xfsprogs
 
 
+# docker-engine
+sudo apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+echo deb https://apt.dockerproject.org/repo ubuntu-trusty main | sudo tee /etc/apt/sources.list.d/docker.list
+apt-get update
+apt-get install docker-engine
 
